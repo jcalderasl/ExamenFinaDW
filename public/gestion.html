@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gestión de Expedientes Médicos</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <br><br>
+        <center>
+            <h1 class="mt-4">Control De Expedinetes Medicos</h1>
+        </center>
+        <br><br><br>
+
+        <!-- Main Menu -->
+        <center>
+            <div>
+                <a href="#consultar" id="menu">CONSULTAR</a>
+                <a href="#agregar" id="menu">Agregar paciente</a>
+                <a href="#actualizar" id="menu">Actualizar paciente</a>
+                <a href="#eliminar" id="menu">Eliminar paciente</a>
+
+            </div>
+        </center>
+        <br><br><br><br><br><br>
+
+
+        <!-- Agregar este formulario para buscar pacientes por nombre -->
+        <section id="consultar" class="container">
+            <h4 class="mt-4">Consultar pacientes por Nombre</h4>
+            <form id="formularioConsultar" class="mt-4">
+                <div class="form-group">
+                    <input type="text" id="nombreConsulta" class="form-control" placeholder="Nombre del paciente">
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+        </section> 
+
+        <section id="" class="mt-4">
+            <table id="tablaPacientes2" class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Sexo</th>
+                        <th>DPI</th>
+                        <th>Teléfono</th>
+                        <th>Fecha de Visita</th>
+                        <th>Email</th>
+                        <th>Diagnosticos</th>
+                        <th>Tratamientos</th>
+                        <th>Alergias</th>
+                        <th>Enfermedades</th>
+                    </tr>
+                </thead>
+                <tbody id="pacientes2">
+                </tbody>
+            </table>
+            <!-- Agrega un botón para eliminar pacientes seleccionados -->
+            <button id="btnEliminarPacientes" class="btn btn-danger">Eliminar</button>
+
+
+        </section>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+        <!-- Content Container for SPA -->
+        <section id="agregar" class="container">
+            <div class="container">
+
+                <!-- Formulario para agregar una nueva película -->
+                <h4 class="mt-4">Agregar una nuevo Paciente</h4>
+                <form id="formulario" class="mt-4">
+                    <div class="form-group">
+                        <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Fecha de Nacimiento: </label>
+                        <input type="date" id="fechaNacimiento" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo" class="form-control">
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="number" id="DPI" class="form-control" placeholder="DPI/CUI">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Fecha de Visita: </label>
+                        <input type="date" id="fechaVisita" class="form-control">
+                    </div>
+                    <h3>Información de Contacto</h3>
+                    <div class="form-group">
+                        <input type="text" id="direccion" class="form-control" placeholder="Direccion">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="telefono" class="form-control" placeholder="Teléfono">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="email" class="form-control" placeholder="Email">
+                    </div>
+                    <h3>Historia Médica</h3>
+                    <div class="form-group">
+                        <input type="text" id="diagnosticos" class="form-control" placeholder="Diagnosticos previos">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="tratamientos" class="form-control" placeholder="Tratamientos previos">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="alergias" class="form-control"
+                            placeholder="Alergias y reacciones a medicamentos">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="enfermedades" class="form-control"
+                            placeholder="Historial de enfermedades cronicas">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                </form>
+        </section>
+        <br><br><br><br><br><br>
+
+        <section id="actualizar" class="mt-4">
+            <!-- Formulario para actualizar una película existente -->
+            <h4 class="mt-4">Actualizar Pacientes</h4>
+            <form id="formularioActualizar" class="mt-4">
+                <div class="form-group">
+                    <input type="text" id="idActualizar" class="form-control"
+                        placeholder="ID del paciente a actualizar">
+                </div>
+                
+                
+
+                <div class="form-group">
+                    <label for="">Nueva Fecha de Visita: </label>
+                    <input type="date" id="fechaVisitaActualizar" class="form-control">
+                </div>
+
+                <h3>Información de Contacto</h3>
+
+                <div class="form-group">
+                    <input type="text" id="direccionActualizar" class="form-control" placeholder="Nueva Direccion">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="telefonoActualizar" class="form-control" placeholder="Nuevo Telefono">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="emailActualizar" class="form-control" placeholder="Nuevo Email">
+                </div>
+                <h3>Historia Médica</h3>
+                <div class="form-group">
+                    <input type="text" id="diagnosticosActualizar" class="form-control"
+                        placeholder="Nuevos Diagnosticos previos">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="tratamientosActualizar" class="form-control"
+                        placeholder="Nuevos Tratamientos previos">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="alergiasActualizar" class="form-control"
+                        placeholder="Alergias y reacciones a medicamentos">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="enfermedadesActualizar" class="form-control"
+                        placeholder="Historial de enfermedades cronicas">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+        </section>
+        <br><br><br><br><br><br>
+
+
+        <section id="eliminar" class="mt-4">
+            <!-- Formulario para eliminar una Paciente existente -->
+            <h4 class="mt-4">Eliminar Paciente</h4>
+            <form id="formularioEliminar" class="mt-4">
+                <div class="form-group">
+                    <input type="text" id="idEliminar" class="form-control" placeholder="ID del Paciente a eliminar">
+                </div>
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
+        </section>
+
+    </div>
+    </div>
+    <br><br><br>
+
+    <section >
+        <table id="tablaPacientes" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Sexo</th>
+                    <th>DPI</th>
+                    <th>Teléfono</th>
+                    <th>Fecha de Visita</th>
+                    <th>Email</th>
+                    <th>Diagnosticos</th>
+                    <th>Tratamientos</th>
+                    <th>Alergias</th>
+                    <th>Enfermedades</th>
+                </tr>
+            </thead>
+            <tbody id="pacientes">
+            </tbody>
+        </table>
+
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+    <script src="app.js"></script>
+    <script src="funciones.js"></script>
+</body>
+
+</html>
